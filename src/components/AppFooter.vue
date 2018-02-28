@@ -1,7 +1,7 @@
 <template>
   <footer>
     <br><br><hr>
-    <a href="https://github.com/BYU-CS260-Winter-2018/lab-3-dylanyoung12">Github Repository</a>
+    <a href="https://github.com/dylanyoung12/creativeproject3">Github Repository</a>
   </footer>
 </template>
 
