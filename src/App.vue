@@ -1,13 +1,18 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <app-header></app-header>
     <router-view/>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
+import AppHeader from './components/AppHeader.vue';
+import AppFooter from './components/AppFooter.vue';
 export default {
-  name: 'App'
+  name: 'App',
+  components: { AppHeader, AppFooter }
 }
 </script>
 
@@ -18,6 +23,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  margin: 20px;
   margin-top: 60px;
 }
 </style>
