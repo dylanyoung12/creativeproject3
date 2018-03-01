@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>My Bookshelf</h1>
     <img src="./assets/logo.png">
     <app-header></app-header>
     <router-view/>
@@ -24,6 +25,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin: 20px;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 </style>
