@@ -10,7 +10,7 @@
     <br>
     <ul class="list-group" id="results">
       <li class="list-group-item d-flex justify-content-between align-items-center" v-for="item in searchResults">
-        {{ item.text }}
+        <span>{{ item.title }}<br/> -- {{ item.author }}</span>
         <button type="button" class="btn" v-on:click="addToList(item)">Add</button>
       </li>
     </ul>
@@ -25,9 +25,15 @@
     <br>
     <ul class="list-group">
       <li class="list-group-item d-flex justify-content-between align-items-center" v-for="item in filteredBooks" draggable="true" v-on:dragstart="dragItem(item,$event)" v-on:dragover.prevent v-on:drop="dropItem(item)">
-        <div>
-          <input class="mr-2" type="checkbox" v-model="item.read" v-on:click="readBook(item)"/>
-          <span v-bind:class="{ read: item.read }">{{ item.text }}</span>
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-auto">
+              <input type="checkbox" v-model="item.read" v-on:click="readBook(item)"/>
+            </div>
+            <div class="col">
+              <span v-bind:class="{ read: item.read }">{{ item.title }}<br/> -- {{ item.author }}</span>
+            </div>
+          </div>
         </div>
         <button type="button" class="btn remove" v-on:click="remove(item)">Remove</button>
       </li>
@@ -81,7 +87,7 @@ export default {
           $("#results").children().removeClass("disabled");
           json.items.forEach(function(book) {
             //console.log(book.volumeInfo.title);
-            self.searchResults.push({text: book.volumeInfo.title, read: false});
+            self.searchResults.push({title: book.volumeInfo.title, author: book.volumeInfo.authors[0], read: false});
           });
         },
         error : function() {
@@ -133,7 +139,7 @@ export default {
     },
     dragItem: function(item, event) {
       this.drag = item;
-      event.dataTransfer.setData('text', '');
+      event.dataTransfer.setData('title', '');
     },
     dropItem: function(item) {
       var indexItem = this.bookshelf.indexOf(this.drag);
@@ -147,7 +153,23 @@ export default {
 
 <style scoped>
 li {
-  height: 4em;
+  min-height: 4.5em;
+  text-align: left;
+}
+
+button {
+  margin: 5px;
+}
+
+.btn-primary {
+  color: black;
+  background-color: rgb(126, 182, 217);
+  border-color: rgb(126, 182, 217);
+}
+
+input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
 }
 
 .disabled button {

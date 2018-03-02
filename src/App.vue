@@ -34,6 +34,6 @@ body {
 }
 
 img {
-  width: 25vw;
+  max-width: 20%;
 }
 </style>

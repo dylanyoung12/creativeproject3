@@ -38,4 +38,10 @@ export default {
   .container {
     text-align: left;
   }
+
+  .btn-primary {
+    color: black;
+    background-color: rgb(126, 182, 217);
+    border-color: rgb(126, 182, 217);
+  }
 </style>
