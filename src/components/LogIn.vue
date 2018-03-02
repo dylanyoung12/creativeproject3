@@ -23,7 +23,7 @@
     </div>
     <br>
     <div class="container">
-      <p>Dont' have an account?&emsp;<button class="btn">Register</button></p>
+      <p>Don't have an account?&emsp;<button class="btn">Register</button></p>
     </div>
   </div>
 </template>
