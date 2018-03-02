@@ -1,6 +1,9 @@
 <template>
   <div id="home">
     <h2>Welcome</h2>
+    <div class="container">
+      <p>Here at MyBookshelf, we provide a simple and convenient way to keep track of those books you've been meaning to read since who knows when.</p>
+    </div>
   </div>
 </template>
 

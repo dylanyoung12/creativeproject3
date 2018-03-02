@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <h1>My Bookshelf</h1>
-    <img src="./assets/logo.png">
+    <img src="/static/images/Library-icon.png">
     <app-header></app-header>
+    <br>
     <router-view/>
     <app-footer></app-footer>
   </div>
@@ -18,13 +19,21 @@ export default {
 </script>
 
 <style>
+body {
+  background-color: rgb(217, 188, 146);
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin: 20px;
-  margin-top: 40px;
+  margin: 40px;
+  margin-top: 50px;
+}
+
+img {
+  width: 25vw;
 }
 </style>
