@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>My Bookshelf</h1>
-    <img src="/static/images/Library-icon.png">
+    <img src="../static/images/Library-icon.png">
     <app-header></app-header>
     <br>
     <router-view/>
